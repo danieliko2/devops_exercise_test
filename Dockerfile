@@ -9,4 +9,4 @@ FROM alpine
 WORKDIR /App
 COPY --from=builder App/hello.txt /App/
 
-ENTRYPOINT [ "/bin/sh", "-c" , "cat hello.txt && sleep 10"]
+ENTRYPOINT [ "/bin/sh", "-c" , "cat hello.txt && sleep 20"]

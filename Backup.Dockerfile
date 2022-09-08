@@ -3,7 +3,7 @@ FROM python:alpine3.10 as builder
 WORKDIR /App
 COPY app.py .
 
-RUN sleep 1000
+RUN python app.py
 
 FROM alpine
 WORKDIR /App
