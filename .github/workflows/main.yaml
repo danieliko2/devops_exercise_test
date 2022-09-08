@@ -22,7 +22,7 @@ jobs:
           token: ${{ github.token }}
       - name: 2nd stage
         run: |
-          git describe --tags `git rev-list --tags --max-count=1
+          git describe --tags `git rev-list --tags --max-count=1`
       # - name: Create tag
       #   uses: actions/github-script@v5
       #   with:
