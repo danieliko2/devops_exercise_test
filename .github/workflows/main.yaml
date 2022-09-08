@@ -35,6 +35,5 @@ jobs:
       - name: 'Docker Stage'
         run: |
           docker build -t hwapp .
-          docker run -v /Artifact/:/App/ hwapp
+          docker run hwapp
           ls-la
-          cat /Artifact/hello.txt
