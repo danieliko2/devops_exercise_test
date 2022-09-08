@@ -25,8 +25,8 @@ jobs:
           major=$(git describe --tags `git rev-list --tags --max-count=1` |  awk -F \. {'print $1'})
           minor=$(git describe --tags `git rev-list --tags --max-count=1` |  awk -F \. {'print $2'})
           patch=$(git describe --tags `git rev-list --tags --max-count=1` |  awk -F \. {'print $3'})
-          patch=patch+1
-          echo $major+"."+$minor+"."+$patch
+          patch=$((patch + 1))
+          echo "${major}.${minor}.${patch}"
       # - name: Create tag
       #   uses: actions/github-script@v5
       #   with:
