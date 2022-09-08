@@ -28,7 +28,7 @@ jobs:
           patch=$((patch + 1))
           newTag="${major}.${minor}.${patch}"
           echo $newTag
-          git checkout $newTag
+          git tag $newTag
       # - name: Create tag
       #   uses: actions/github-script@v5
       #   with:
