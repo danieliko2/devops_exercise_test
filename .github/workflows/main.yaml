@@ -25,15 +25,9 @@ jobs:
           major=$(git tag | tail -1 | awk -F \. {'print $1'})
           minor=$(git tag | tail -1 | awk -F \. {'print $2'})
           patch=$(git tag | tail -1 | awk -F \. {'print $3'})
-          
-          lastMajor=$(git tag | tail -2 | head -1 | awk -F \. {'print $1'})
-          lastMinor=$(git tag | tail -2 | head -1 | awk -F \. {'print $1'})
 
-
-          if [ "${major}" = "${lastMajor}" ] && [ "${minor}" = "${lastMinor}" ] then
-            patch=$((patch + 1))
-            newTag="${major}.${minor}.${patch}"
-            echo $newTag
-            git tag $newTag
-            git push --tags
-          fi
+          patch=$((patch + 1))
+          newTag="${major}.${minor}.${patch}"
+          echo $newTag
+          git tag $newTag
+          git push --tags
