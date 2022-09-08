@@ -1,12 +1,12 @@
 FROM python:alpine3.10 as builder
 
 WORKDIR /App
-COPY App/app.py /App
+COPY app.py .
 
-RUN ["python3", "app.py"]
+RUN sleep 1000
 
 FROM alpine
 WORKDIR /App
 COPY --from=builder App/hello.txt /App/
 
-ENTRYPOINT [ "/bin/sh", "-c" , "cat hello.txt && sleep 10"]
+CMD [ "cat", "hello.txt" ]

@@ -35,5 +35,6 @@ jobs:
       - name: 'Docker Stage'
         run: |
           docker build -t hwapp .
-          docker run hwapp
-          ls-la
+          docker run -v .:/App hwapp
+          dockerProcessID=docker ps | awk '{ print $1 }'
+          docker cp ${dockerProcessID}:/App/hello.txt ./Artifact
