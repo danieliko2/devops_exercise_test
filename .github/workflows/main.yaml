@@ -29,6 +29,7 @@ jobs:
           newTag="${major}.${minor}.${patch}"
           echo $newTag
           git tag $newTag
+          git push --tags
       # - name: Create tag
       #   uses: actions/github-script@v5
       #   with:
