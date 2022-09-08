@@ -31,3 +31,9 @@ jobs:
           echo $newTag
           git tag $newTag
           git push --tags
+      
+      - name: 'Docker Stage'
+        run: |
+          docker build -t hwapp .
+          docker run hwapp -v ./Artifact/:/App/
+          cat /Artifact/hello.txt
