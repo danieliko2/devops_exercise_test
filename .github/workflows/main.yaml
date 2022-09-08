@@ -17,8 +17,7 @@ jobs:
     steps:
       - name: Get last tag
         run: |
-          echo $GITHUB_REF
-
+          echo git describe --tags
       # - name: Create tag
       #   uses: actions/github-script@v5
       #   with:
