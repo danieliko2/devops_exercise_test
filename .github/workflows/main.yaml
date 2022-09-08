@@ -36,4 +36,5 @@ jobs:
         run: |
           docker build -t hwapp .
           docker run -v /Artifact/:/App/ hwapp
+          ls-la
           cat /Artifact/hello.txt
