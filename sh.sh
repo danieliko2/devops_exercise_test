@@ -5,4 +5,4 @@ patch=$(git tag | tail -1 | awk -F \. {'print $3'})
 
 echo $major
 echo $minor
-echo $patch
+echo $patch 
