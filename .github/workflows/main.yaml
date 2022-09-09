@@ -39,6 +39,6 @@ jobs:
           docker run -d hwapp
           docker ps
           echo $(docker ps | grep hwapp | awk '{ print $1 }')
-          dockerProcessID=docker ps | grep hwapp | awk '{ print $1 }'
+          containerId=$(docker ps | grep myapptest | awk '{ print $1 }')
           echo $(docker ps | grep $(containerId))
-          # docker cp ${dockerProcessID}:/App/hello.txt ./Artifact
+          docker cp ${containerId}:/App/hello.txt ./Artifact
