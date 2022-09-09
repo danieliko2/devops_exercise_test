@@ -9,4 +9,5 @@ FROM alpine
 WORKDIR /App
 COPY --from=builder App/hello.txt /App/
 
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
 ENTRYPOINT [ "/bin/sh", "-c" , "cat hello.txt && tail -f /dev/null"]
