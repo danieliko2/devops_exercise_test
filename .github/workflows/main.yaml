@@ -38,5 +38,6 @@ jobs:
           docker build -t hwapp .
           docker run -d hwapp
           docker ps
+          echo $(docker ps | grep hwapp | awk '{ print $1 }')
           # dockerProcessID=docker ps | grep hwapp | awk '{ print $1 }'
           # docker cp ${dockerProcessID}:/App/hello.txt ./Artifact
