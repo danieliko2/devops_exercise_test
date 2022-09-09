@@ -41,7 +41,7 @@ jobs:
           echo $(docker ps | grep hwapp | awk '{ print $1 }')
           containerId=$(docker ps | grep hwapp | awk '{ print $1 }')
           echo $(docker ps | grep ${containerId})
-          docker cp ${containerId}:/App/hello.txt ./Artifact/hello.txt
+          docker cp ${containerId}:/App/hello.txt ./hello.txt
           ls -la
           pwd
           ls Artifact
