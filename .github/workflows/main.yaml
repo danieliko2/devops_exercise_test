@@ -41,13 +41,12 @@ jobs:
           echo $(docker ps | grep hwapp | awk '{ print $1 }')
           containerId=$(docker ps | grep hwapp | awk '{ print $1 }')
           echo $(docker ps | grep ${containerId})
-          docker cp ${containerId}:/App/hello.txt ./hello.txt
+          docker cp ${containerId}:/App/hello.txt ./Artifact
           ls -la
           pwd
           ls Artifact
-          cat Artifact
-      # - name: 'Upload Artifact'
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: hw-artifact
-      #     path: ./Artifact/hello.txt
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v3
+        with:
+          name: hw-artifact
+          path: ./Artifact/hello.txt
