@@ -44,7 +44,9 @@ jobs:
           docker cp ${containerId}:/App/hello.txt ./Artifact
           ls -la
           pwd
-          ls Artifact
+          cd Artifact
+          pwd
+          ls -la
       # - name: 'Upload Artifact'
       #   uses: actions/upload-artifact@v3
       #   with:
